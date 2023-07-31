@@ -36,3 +36,33 @@
 
 - Отношения сущностей “КНИГА” и “АВТОР” учтены при сохранении/чтении информации с сервиса. Сервис не допускает сохранения неподходящей информации.
 
+
+## Запуск приложения
+
+- Клонирем 
+```bash
+git clone https://github.com/yuri-shemetov/IT-Bootcamp-Books-and-Authors.git
+```
+- Приложение использует инструмент [poetry](https://python-poetry.org/)  для управления зависимостями. Вам необходимо его
+установить, до начала работы
+```bash
+pip install --user poetry
+poetry install
+poetry --version
+```
+- Переходим в папку SRC: `cd src`. Вам необходимо будет настроить вашу копию `.env` для работы с приложением. Хорошим стартом будет копирование
+файла `.env.dist` в `.env`.
+
+- Запускаем миграции 
+```bash
+poetry run manage.py makemigrations
+poetry run manage.py makemigrate
+```
+- Создаем суперюзера для админки и возможности ее дальнейшей настройки
+```bash
+poetry run  manage.py createsuperuser
+```
+- Запускаем локальный сервер 
+```bash
+poetry run ./manage.py runserver
+```
