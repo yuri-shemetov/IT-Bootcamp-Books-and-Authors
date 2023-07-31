@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "it-bootcamp-books-and-authors"
+version = "0.1.0"
+description = "For IT-Bootcamp"
+authors = ["Yuri <yuri-sh@tut.by>"]
+readme = "README.md"
+packages = [{include = "it_bootcamp_books_and_authors"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
