@@ -6,8 +6,9 @@ from django.views.generic import (
     DeleteView,
 )
 from django.urls import reverse_lazy
+from rest_framework import viewsets
 
-from books import models, forms
+from books import models, forms, serializers
 
 
 class Books(ListView):
@@ -38,3 +39,8 @@ class BookDelete(DeleteView):
     model = models.Book
     success_url = reverse_lazy("books")
     template_name = "books/book_delete.html"
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = models.Book.objects.all()
+    serializer_class = serializers.AuthorSerializer

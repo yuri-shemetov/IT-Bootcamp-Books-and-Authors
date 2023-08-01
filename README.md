@@ -39,6 +39,8 @@
 
 ## Запуск приложения
 
+Задание выполнено с разделением url-ов для API и Web-приложения
+
 - Клонирем 
 ```bash
 git clone https://github.com/yuri-shemetov/IT-Bootcamp-Books-and-Authors.git

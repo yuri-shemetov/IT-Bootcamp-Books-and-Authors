@@ -6,8 +6,9 @@ from django.views.generic import (
     DeleteView,
 )
 from django.urls import reverse_lazy
+from rest_framework import viewsets
 
-from authors import models, forms
+from authors import models, forms, serializers
 
 
 class Authors(ListView):
@@ -36,3 +37,8 @@ class AuthorDelete(DeleteView):
     model = models.Author
     success_url = reverse_lazy("authors")
     template_name = "authors/author_delete.html"
+
+
+class AuthorViewSet(viewsets.ModelViewSet):
+    queryset = models.Author.objects.all()
+    serializer_class = serializers.AuthorSerializer
